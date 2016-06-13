@@ -136,10 +136,16 @@
 		</marker>
 		<exit>
 			<condition>
-				<less-than>
-					<property>/controls/engines/engine[0]/propeller-pitch</property>
+				<and>
+				<greater-than>
+					<property>/controls/engines/engine[0]/propeller-adjust</property>
 					<value>0.5</value>
+				</greater-than>
+				<less-than>
+					<property>/controls/engines/engine[0]/propeller-adjust</property>
+					<value>0.56</value>
 				</less-than>
+				</and>
 			</condition>
 		</exit>
 	</step>
