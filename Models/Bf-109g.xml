@@ -397,10 +397,10 @@
    </entry>
   </interpolation>
   <center>
-   <x-m>3.10</x-m>
-   <y-m>0.30</y-m>
-   <z-m>0.37</z-m>
-  </center>
+   <x-m>-1.10</x-m>
+   <y-m>0.31</y-m>
+   <z-m>0.45</z-m>
+   </center>
   <axis>
    <x>-1.0</x>
    <y>0.0</y>

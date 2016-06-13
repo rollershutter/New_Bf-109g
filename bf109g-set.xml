@@ -211,7 +211,7 @@ February 2006,  Detlef Faber
 
     <help>
     <key>
-      <name>Ctrl-l</name>
+      <name>l</name>
       <desc>toggle Tailwheel Lock</desc>
     </key>
     <key>
@@ -230,10 +230,10 @@ February 2006,  Detlef Faber
       <name>n</name>
       <desc>Propeller Fine</desc>
     </key>
-   <key>
+<!--   <key>
       <name>l</name>
       <desc>Livery Select</desc>
-    </key>
+    </key>-->
    <key>
       <name>ctrl-d</name>
       <desc>Drop (external) Tank</desc>
@@ -254,10 +254,10 @@ February 2006,  Detlef Faber
       <name>ctrl-e</name>
       <desc>Drop Bomb</desc>
     </key>
-   <key>
+<!--   <key>
       <name>H</name>
       <desc>Fire WGR 21</desc>
-    </key>
+    </key>-->
 <text>Use the Equipment-Fuel and Payload Dialog to select external Stores. l toggles the Livery select Dialog
 
 Some notes on the propeller adjust mechanism:
@@ -612,14 +612,14 @@ Don't forget to release Tailwheel lock (lever on the left cockpitwall) before ta
   </binding>
   </key> 
 
-      <key n="72">
+      <!--<key n="72">
         <name>H</name>
         <desc>Fire WGr 21</desc>
           <binding n="0">
           <command>nasal</command>
           <script>bf109.fire_wgr()</script>
         </binding>
-      </key>
+      </key>-->
      <key n="115">
       <name>s</name>
       <binding>
