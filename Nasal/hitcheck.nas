@@ -116,7 +116,7 @@ setlistener("ai/models/bomb-impact", func(n) {
 					print (fused);
 					if ( fused != -1 ) {
 							print ("armed ");
-		     			settimer (func {geo.put_model( "Aircraft/F-86/Models/Effects/crater.ac", lat, long )}, fused);
+		     			settimer (func {geo.put_model( "Models/Effects/crater.ac", lat, long )}, fused);
 
 					}
     }
