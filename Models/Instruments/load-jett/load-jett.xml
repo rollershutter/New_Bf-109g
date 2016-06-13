@@ -36,8 +36,10 @@
     <button>0</button>
     <repeatable>false</repeatable>
    <binding>
-      <command>nasal</command>
-      <script>bf109.jett_center_stores()</script>
+      <!--<command>nasal</command>
+      <script>weapons.drop_tank()</script>-->
+      <command>property-toggle</command>
+      <property>controls/armament/trigger2</property>
    </binding>
     <binding>
       <command>property-assign</command>

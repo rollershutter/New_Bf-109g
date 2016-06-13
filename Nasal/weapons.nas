@@ -30,6 +30,7 @@ var drop_tank = func () {
 		setprop ("consumables/fuel/tank[1]/capacity-gal_us",0);
 		setprop ("consumables/fuel/tank[1]/selected",0);
 		setprop ("consumables/fuel/tank[0]/selected",1);
+		setprop ("/sim/weight[1]/weight-lb",0);
 }
 
 var drop_bomb = func () {
@@ -42,7 +43,7 @@ var drop_bomb = func () {
 		if ( getprop ("sim/armament/pylon[1]/type") == 3 or getprop ("sim/armament/pylon[1]/type") == 4 ) {
 				setprop ("sim/armament/pylon[1]/type", 1);
 				setprop ("sim/armament/pylon[1]/release_bomb", 1);
-				setprop ("weight[0]/lbs",0);
+				setprop ("/sim/weight[1]/weight-lb",0);
 				dropped = dropped+1;
 		} 
 
@@ -64,7 +65,7 @@ var fire_rocket = func () {
 		if ( getprop ("sim/armament/pylon[0]/type") == 2 ) {
 				setprop ("sim/armament/pylon[0]/type", 3);
 				setprop ("sim/armament/pylon[0]/fire_rocket", 1);
-				setprop ("weight[0]/lbs",0);
+				setprop ("/sim/weight[0]/weight-lb",0);
 				settimer (func {find_rocket(0)},0.02);
 				launched = launched+1;
 		} 
@@ -72,7 +73,7 @@ var fire_rocket = func () {
 				if ( getprop ("sim/armament/pylon[2]/type") == 2 ) {
 						setprop ("sim/armament/pylon[2]/type", 3);
 						setprop ("sim/armament/pylon[2]/fire_rocket", 1);
-						setprop ("weight[2]/lbs",0);
+						setprop ("/sim/weight[2]/weight-lb",0);
 						settimer (func {find_rocket(2)},0.02);
 						launched = launched+1;
 				}

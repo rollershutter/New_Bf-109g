@@ -119,6 +119,20 @@
 		    <property>sim/weight[2]/selected</property>
 		    <value>MG-151 Pod</value>
 		</binding>
+
+		<binding> 
+		    <command>property-assign</command>
+		    <property>sim/weight[0]/weight-lb</property>
+		    <value>0</value>
+		    <!-- proposal: <value>110</value> -->
+		</binding>
+		<binding> 
+		    <command>property-assign</command>
+		    <property>sim/weight[2]/weight-lb</property>
+		    <value>0</value>
+		    <!-- proposal: <value>110</value> -->
+		</binding>
+
 		<binding> 
 		    <command>property-assign</command>
 		    <property>sim/armament/gun[2]/serviceable</property>
@@ -207,6 +221,13 @@
 		    <property>sim/weight[1]/selected</property>
 		    <value>none</value>
 		</binding>
+
+		<binding> 
+		    <command>property-assign</command>
+		    <property>sim/weight[1]/weight-lb</property>
+		    <value>0</value>
+		</binding>
+
 		<binding> 
 		    <command>property-assign</command>
 		    <property>controls/armament/fuse-control</property>
@@ -240,15 +261,29 @@
 		    <property>sim/weight[1]/selected</property>
 		    <value>Droptank</value>
 		</binding>
+
+		<binding> 
+		    <command>property-assign</command>
+		    <property>sim/weight[1]/weight-lb</property>
+		    <value>0</value>
+		    <!-- proposal: <value>50</value> -->
+		</binding>
+
+		<binding> 
+		    <command>property-assign</command>
+		    <property>controls/armament/fuse-control</property>
+		    <value>false</value>
+		</binding>
+
 		<binding> 
 		    <command>property-assign</command>
 		    <property>consumables/fuel/tank[1]/capacity-gal_us</property>
-		    <value>120</value>
+		    <value>86</value>
 		</binding>
 		<binding> 
 		    <command>property-assign</command>
 		    <property>consumables/fuel/tank[1]/level-gal_us</property>
-		    <value>120</value>
+		    <value>86</value>
 		</binding>
 		<binding> 
 		    <command>property-assign</command>
@@ -293,6 +328,17 @@
 		    <command>property-assign</command>
 		    <property>sim/weight[1]/weight-lb</property>
 		    <value>500</value>
+		</binding>
+
+		<binding> 
+		    <command>property-assign</command>
+		    <property>consumables/fuel/tank[1]/capacity-gal_us</property>
+		    <value>0</value>
+		</binding>
+		<binding> 
+		    <command>property-assign</command>
+		    <property>consumables/fuel/tank[1]/level-gal_us</property>
+		    <value>0</value>
 		</binding>
 
     </button>

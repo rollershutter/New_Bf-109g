@@ -185,7 +185,8 @@ YASim aerodynamic model for a Messerschmitt Bf 109
 
 <tank x="-1.101" y="0" z="-0.2" capacity="705"/> 
 
-<tank x="0.399" y="0" z="-0.76" capacity="592"/>
+<!--<tank x="0.399" y="0" z="-0.76" capacity="592"/>-->
+<tank x="0.399" y="0" z="-0.76" capacity="516"/>
 
 <!-- pilot -->
 <ballast x="-0.501" y="0" z="0.689" mass="180"/>
@@ -193,8 +194,8 @@ YASim aerodynamic model for a Messerschmitt Bf 109
 
 <ballast x="2.399" y="0" z="0.3" mass="1500"/>
 
-<weight x="0.399" y="-2.1" z="-0.76" mass-prop="sim/weight[1]/weight-lb" size="0.36" />
-<weight x="0.399" y="0" z="-0.76" mass-prop="sim/weight[0]/weight-lb" size="0.46" />
+<weight x="0.399" y="-2.1" z="-0.76" mass-prop="sim/weight[0]/weight-lb" size="0.36" />
+<weight x="0.399" y="0" z="-0.76" mass-prop="sim/weight[1]/weight-lb" size="0.46" />
 <weight x="0.399" y="2.1" z="-0.76" mass-prop="sim/weight[2]/weight-lb" size="0.36" />
 
 </airplane>

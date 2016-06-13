@@ -237,26 +237,28 @@ var stop_cannon = func {
      setprop("/controls/armament/trigger1", 0); 
 }
 
-var fire_wgr = func {
- if (getprop("/controls/armament/master-arm") == 1)  {
-  rcount=getprop("/sim/weight[1]/weight-lb");
-  if(rcount > 20){
-    if(rcount == 270)  {
-     setprop("/controls/armament/wgr", 1)
-     } 
-  setprop("sim/weight[1]/weight-lb", rcount - 250.0);
-  setprop("sim/weight[2]/weight-lb", rcount - 250.0);
-  }
- }
-}
+## functional? TODO: look
+#var fire_wgr = func {
+# if (getprop("/controls/armament/master-arm") == 1)  {
+#  rcount=getprop("/sim/weight[0]/weight-lb");
+#  if(rcount > 20){
+#    if(rcount == 270)  {
+#     setprop("/controls/armament/wgr", 1)
+#     } 
+#  setprop("sim/weight[1]/weight-lb", rcount - 250.0);
+#  setprop("sim/weight[2]/weight-lb", rcount - 250.0);
+#  }
+# }
+#}
 
+## is functional - binding with load_jett-handle TODO: if load_jett-handle should drop center weapons, use that, else is droptank, use weapons.droptank()... ((functional? TODO: look))
 var jett_center_stores = func {
-		var center_load = getprop("sim/weight[0]/selected");
+		var center_load = getprop("sim/weight[1]/selected");
 		print (center_load);
 		if (center_load == "Droptank") {
 			 print ("dropping tank");
    	   setprop("/controls/armament/station/release-tank", 1);
-  	   setprop("/sim/weight[0]/selected","none");
+  	   setprop("/sim/weight[1]/selected","none");
  	     setprop("/consumables/fuel/tank[1]/selected",0);
  	     setprop("/consumables/fuel/tank[1]/level-gal_us",0);
    		 setprop("/consumables/fuel/tank[1]/level-lbs",0);
@@ -268,13 +270,13 @@ var jett_center_stores = func {
 		}
 }
 
-
-var drop_tank = func {
-  rcount=getprop("/sim/weight[0]/weight-lb");
-  if(rcount > 49){
-
-     } 
- }
+## unused
+#var drop_tank = func {
+#  rcount=getprop("/sim/weight[0]/weight-lb");
+#  if(rcount > 49){
+#
+#     } 
+# }
 
 var aim = func {
   setprop ("sim/current-view/x-offset0", getprop ("sim/current-view/x-offset-m"));
@@ -297,6 +299,10 @@ var starter = func {
 		}else{
 			setprop("/controls/engines/engine[0]/starter",0);}	
 	}
+
+var fuel_switch = func() {
+	print("fuel_switch(): not implemented");
+}
 
 var fuel_jettison = func {
   remaining = getprop("consumables/fuel/tank[0]/level-gal_us");
@@ -386,21 +392,24 @@ var magicstart = func {
    		 };
    },1);
 
-    setlistener("sim/weight[0]/selected", func(n) {
-	pos4=n.getValue();
-	dropped = getprop("controls/armament/station[0]/release");
-#	print (dropped , pos4 );
-		if (pos4 !="none") {
-				if ( pos4 != "Droptank") {
-					setprop ("controls/armament/fuse-control", 1);
-				}
-				if (dropped == 0 ) { 
-		        if(pos4 == "Droptank"){
-								setprop ("consumables/fuel/tank[1]/level-gal_us",86);						
-						}
-				}
-    };
-   },0,0);
+## deactivated, works with payload xml-property-sets
+#    setlistener("sim/weight[1]/selected", func(n) {
+#	pos4=n.getValue();
+#	dropped = getprop("controls/armament/station[0]/release");
+##	print (dropped , pos4 );
+#		if (pos4 !="none") {
+#				if ( pos4 != "Droptank") {
+#					setprop ("controls/armament/fuse-control", 1);
+#					setprop ("consumables/fuel/tank[1]/level-gal_us",0);
+#					setprop ("consumables/fuel/tank[1]/capacity-gal_us",0);
+#				}
+#				if (dropped == 0 ) { 
+#		        if(pos4 == "Droptank"){
+#								setprop ("consumables/fuel/tank[1]/level-gal_us",86);						
+#						}
+#				}
+#    };
+#   },0,0);
 
 var update_mp_props = func {
 	# print ("updating...");
